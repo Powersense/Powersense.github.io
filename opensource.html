@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open source — Powersense.jl | Powersense</title>
+<meta name="description" content="Powersense maintains Powersense.jl, an open-source Julia package with ACOPF formulations and nonlinear programming solvers for power system research.">
+<link rel="canonical" href="https://www.powersense.io/opensource.html">
+<meta property="og:title" content="Open source — Powersense.jl | Powersense">
+<meta property="og:description" content="Powersense maintains Powersense.jl, an open-source Julia package with ACOPF formulations and nonlinear programming solvers for power system research.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.powersense.io/opensource.html">
+<meta property="og:image" content="https://www.powersense.io/assets/powersense-logo.png">
+<meta name="theme-color" content="#0d2436">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Powersense home">
+      <img src="assets/icon.png" alt="" width="34" height="34">
+      <span class="brand-word"><span class="p1">power</span><span class="p2">sense</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"
+      onclick="var l=document.getElementById('nl');var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o)">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nl">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="psflow.html">PsFlow</a></li>
+        <li><a href="validation.html">Validation</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="opensource.html" class="active">Open Source</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="cta-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+
+<section class="page-title"><div class="wrap">
+  <div class="eyebrow">Open source</div>
+  <h1>Powersense.jl</h1>
+  <p class="lede">Our solver research lives in the open. Powersense.jl is a Julia package at the intersection of power system operations, optimization, and high-performance computing.</p>
+</div></section>
+
+<section class="section"><div class="wrap split">
+  <div class="prose">
+    <h2 style="margin-top:0">What's in the package</h2>
+    <p>Powersense.jl implements active-set methods for continuous nonlinear optimization, including sequential linear programming, alongside seven alternating-current optimal power flow (ACOPF) formulations spanning polar and rectangular voltage representations and branch-flow and nodal-injection structures.</p>
+    <p>It's research-grade code, openly licensed, with issues and contributions welcome on GitHub. It also anchors the AC roadmap for <a href="psflow.html">PsFlow</a>: the commercial engine's AC capability will build on solver foundations that have been public and inspectable from the start.</p>
+    <h3>Why we publish</h3>
+    <p>In power systems, credibility is earned by showing the math. Publishing solver work is how a small independent shop demonstrates, rather than claims, numerical competence.</p>
+  </div>
+  <div>
+    <div class="code-panel">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>&nbsp;julia</div>
+      <pre><span class="c-kw">import</span> Pkg
+Pkg.<span class="c-fn">add</span>(<span class="c-str">"Powersense"</span>)</pre>
+    </div>
+    <p style="margin-top:18px"><a class="btn btn-ghost" href="https://github.com/PowerSense/Powersense.jl">View on GitHub</a></p>
+  </div>
+</div></section>
+
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Powersense</h4>
+        <p>Independent power-systems software. Transmission study automation built for the engineers who run the studies.</p>
+        <p style="margin-top:10px">Member, EPRI Open Power AI Consortium.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="psflow.html">PsFlow</a></li>
+          <li><a href="validation.html">Validation</a></li>
+          <li><a href="services.html">Engineering services</a></li>
+          <li><a href="opensource.html">Open source</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>&copy; 2026 Powersense. All rights reserved.</span>
+      <span>Customer data stays in customer environments — Powersense never receives or redistributes CEII.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

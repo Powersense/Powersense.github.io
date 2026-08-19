@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Validation — benchmark methodology | Powersense</title>
+<meta name="description" content="How PsFlow is validated: replication benchmarks on public ACTIVSg synthetic grids against industry reference tools, with agreement metrics and runtime scaling published openly.">
+<link rel="canonical" href="https://www.powersense.io/validation.html">
+<meta property="og:title" content="Validation — benchmark methodology | Powersense">
+<meta property="og:description" content="How PsFlow is validated: replication benchmarks on public ACTIVSg synthetic grids against industry reference tools, with agreement metrics and runtime scaling published openly.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.powersense.io/validation.html">
+<meta property="og:image" content="https://www.powersense.io/assets/powersense-logo.png">
+<meta name="theme-color" content="#0d2436">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Powersense home">
+      <img src="assets/icon.png" alt="" width="34" height="34">
+      <span class="brand-word"><span class="p1">power</span><span class="p2">sense</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"
+      onclick="var l=document.getElementById('nl');var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o)">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nl">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="psflow.html">PsFlow</a></li>
+        <li><a href="validation.html" class="active">Validation</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="opensource.html">Open Source</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="cta-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+
+<section class="page-title"><div class="wrap">
+  <div class="eyebrow">Validation</div>
+  <h1>Trust the numbers, not the pitch</h1>
+  <p class="lede">Study software earns adoption through replication, not marketing. Our benchmark methodology is public and reproducible by anyone.</p>
+</div></section>
+
+<section class="section"><div class="wrap prose">
+  <h2 style="margin-top:0">Methodology</h2>
+  <p>PsFlow is benchmarked on open synthetic networks — the Texas A&amp;M ACTIVSg cases, including the 2,000-bus Texas-footprint and larger Eastern-Interconnection-scale systems — so that every result can be independently reproduced without access to confidential (CEII) data.</p>
+  <p>For each benchmark case we publish:</p>
+  <ul>
+    <li><strong>Agreement tables</strong> — post-contingency flows, violation sets, and transfer limits compared element-by-element against established industry reference tools, with error distributions rather than cherry-picked examples.</li>
+    <li><strong>Binding-constraint match rates</strong> — whether PsFlow identifies the same limiting elements a reference study identifies, which is the result screening decisions actually turn on.</li>
+    <li><strong>Runtime scaling</strong> — wall-clock performance from a single core to a full multi-core batch, on documented hardware.</li>
+  </ul>
+  <div class="note" style="margin:26px 0">
+    The first full replication report is in preparation and will be published on this page. Design partners receive benchmark results, including runs on their own cases, during pilot evaluation.
+  </div>
+  <h2>Why public cases</h2>
+  <p>Real network models are restricted data, and vendors who benchmark only on private cases are asking you to take accuracy on faith. Synthetic grids remove that excuse: the inputs are downloadable, the scripts are shareable, and any engineer can rerun our numbers. When you evaluate PsFlow on your own models — under your own data agreements, in your own environment — you'll already know what the engine does on cases you can inspect.</p>
+  <h2>Evaluate it on your own study</h2>
+  <p>The strongest validation is your last study, rerun. Pilot evaluations start by reproducing a screening study your team has already completed, so the comparison baseline is work you trust. <a href="contact.html">Contact us</a> to set one up.</p>
+</div></section>
+
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Powersense</h4>
+        <p>Independent power-systems software. Transmission study automation built for the engineers who run the studies.</p>
+        <p style="margin-top:10px">Member, EPRI Open Power AI Consortium.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="psflow.html">PsFlow</a></li>
+          <li><a href="validation.html">Validation</a></li>
+          <li><a href="services.html">Engineering services</a></li>
+          <li><a href="opensource.html">Open source</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>&copy; 2026 Powersense. All rights reserved.</span>
+      <span>Customer data stays in customer environments — Powersense never receives or redistributes CEII.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PsFlow — scriptable engine for contingency, transfer limit, and congestion studies | Powersense</title>
+<meta name="description" content="PsFlow product overview: DC contingency screening, transfer limits, worst-case transfer limits, PSS/E-compatible inputs, parallel batching, automated reporting, bring-your-own-data.">
+<link rel="canonical" href="https://www.powersense.io/psflow.html">
+<meta property="og:title" content="PsFlow — scriptable engine for contingency, transfer limit, and congestion studies | Powersense">
+<meta property="og:description" content="PsFlow product overview: DC contingency screening, transfer limits, worst-case transfer limits, PSS/E-compatible inputs, parallel batching, automated reporting, bring-your-own-data.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.powersense.io/psflow.html">
+<meta property="og:image" content="https://www.powersense.io/assets/powersense-logo.png">
+<meta name="theme-color" content="#0d2436">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Powersense home">
+      <img src="assets/icon.png" alt="" width="34" height="34">
+      <span class="brand-word"><span class="p1">power</span><span class="p2">sense</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"
+      onclick="var l=document.getElementById('nl');var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o)">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nl">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="psflow.html" class="active">PsFlow</a></li>
+        <li><a href="validation.html">Validation</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="opensource.html">Open Source</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="cta-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+
+<section class="page-title"><div class="wrap">
+  <div class="eyebrow">Product</div>
+  <h1>PsFlow</h1>
+  <p class="lede">A Python engine for transmission screening studies — designed to be scripted, batched, and audited, not clicked through.</p>
+</div></section>
+
+<section class="section"><div class="wrap split">
+  <div class="prose">
+    <h2 style="margin-top:0">What it is</h2>
+    <p>PsFlow implements the linearized study workflows at the heart of screening and scoping work: full N-1 contingency analysis, source-to-sink transfer limits, and worst-case transfer limits across contingency sets. It reads industry-standard case and study decks, runs scenario batches in parallel, and produces structured results — DataFrames, CSVs, and generated constraint reports — instead of screenshots.</p>
+    <h3>What it is not (yet)</h3>
+    <p>PsFlow is a DC-linearized engine. It is the right tool for screening, deliverability, congestion, and transfer-capability work, where linearized analysis is standard practice. It is not a substitute for full AC facility studies today; AC capability is on the roadmap, building on the ACOPF solver work we maintain <a href="opensource.html">in open source</a>. We'd rather be precise about scope than sell you a vague one.</p>
+  </div>
+  <div>
+    <table class="data-table">
+      <thead><tr><th>Capability</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>N-1 contingency screening</td><td class="ok">Available</td></tr>
+        <tr><td>Transfer limit analysis</td><td class="ok">Available</td></tr>
+        <tr><td>Worst-case transfer limits</td><td class="ok">Available</td></tr>
+        <tr><td>PSS/E RAW / CON / MON / SUB input</td><td class="ok">Available</td></tr>
+        <tr><td>Parallel scenario batching</td><td class="ok">Available</td></tr>
+        <tr><td>Automated constraint reports</td><td class="ok">Available</td></tr>
+        <tr><td>Restudy / snapshot diffing</td><td>Roadmap</td></tr>
+        <tr><td>AC analysis</td><td>Roadmap</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<section class="section alt"><div class="wrap">
+  <div class="section-head"><h2>Design principles</h2></div>
+  <div class="feature-grid">
+    <div class="card"><div class="node"></div><h3>Compatibility first</h3><p>Your monitored-element, contingency, and subsystem decks work as-is. Adopting PsFlow means running your existing study, scripted — not rebuilding your model library.</p></div>
+    <div class="card"><div class="node"></div><h3>Reproducible by construction</h3><p>A study is a script plus input files. Version it, diff it, rerun it a year later and get the same answer. Auditability is a feature, not an afterthought.</p></div>
+    <div class="card"><div class="node"></div><h3>Bring your own data</h3><p>PsFlow runs in your environment on models you hold under your own ERCOT, RTO, or utility agreements. Powersense never takes custody of CEII — the architecture makes the compliance question easy.</p></div>
+    <div class="card"><div class="node"></div><h3>Scale is a parameter</h3><p>The same script runs one contingency set on a laptop or a thousand-scenario sweep on a 64-core machine. <code style="font-family:var(--mono);font-size:0.85em">workers=</code> is the only thing that changes.</p></div>
+    <div class="card"><div class="node"></div><h3>Reports engineers can ship</h3><p>Generated constraint summaries and violation tables designed to drop into study deliverables — because the report is the product your client sees.</p></div>
+    <div class="card"><div class="node"></div><h3>Transparent math</h3><p>No black box. Formulations are documented, results are inspectable at every step, and our validation methodology is <a href="validation.html">public</a>.</p></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="cta-panel">
+    <div>
+      <h2>Licensing</h2>
+      <p>PsFlow is licensed annually per seat, with design-partner pricing for early adopters in 2026. Source-escrow terms are available for organizations that need continuity assurance.</p>
+    </div>
+    <div><a class="btn btn-primary" href="contact.html">Request a pilot</a></div>
+  </div>
+</div></section>
+
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Powersense</h4>
+        <p>Independent power-systems software. Transmission study automation built for the engineers who run the studies.</p>
+        <p style="margin-top:10px">Member, EPRI Open Power AI Consortium.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="psflow.html">PsFlow</a></li>
+          <li><a href="validation.html">Validation</a></li>
+          <li><a href="services.html">Engineering services</a></li>
+          <li><a href="opensource.html">Open source</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>&copy; 2026 Powersense. All rights reserved.</span>
+      <span>Customer data stays in customer environments — Powersense never receives or redistributes CEII.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
