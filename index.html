@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Powersense — Transmission study automation at scale</title>
+<meta name="description" content="PsFlow is a scriptable Python engine for N-1 contingency analysis, transfer limits, and congestion screening. PSS/E-compatible inputs, parallel scenario batching, bring-your-own-data.">
+<link rel="canonical" href="https://www.powersense.io/">
+<meta property="og:title" content="Powersense — Transmission study automation at scale">
+<meta property="og:description" content="PsFlow is a scriptable Python engine for N-1 contingency analysis, transfer limits, and congestion screening. PSS/E-compatible inputs, parallel scenario batching, bring-your-own-data.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.powersense.io/">
+<meta property="og:image" content="https://www.powersense.io/assets/powersense-logo.png">
+<meta name="theme-color" content="#0d2436">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Powersense home">
+      <img src="assets/icon.png" alt="" width="34" height="34">
+      <span class="brand-word"><span class="p1">power</span><span class="p2">sense</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"
+      onclick="var l=document.getElementById('nl');var o=l.classList.toggle('open');this.setAttribute('aria-expanded',o)">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nl">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="psflow.html">PsFlow</a></li>
+        <li><a href="validation.html">Validation</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="opensource.html">Open Source</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="cta-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">PsFlow &middot; Python engine for transmission studies</div>
+      <h1>Transmission study automation, <span class="accent">at the scale the queue demands</span></h1>
+      <p class="lede">PsFlow is a scriptable engine for contingency analysis, transfer limits, and congestion screening. Read the study decks you already have, run thousands of scenarios in parallel, and keep every result reproducible in code.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="contact.html">Become a design partner</a>
+        <a class="btn btn-ghost" href="psflow.html">Explore PsFlow</a>
+      </div>
+      <div class="format-strip">
+        <span>Works with your existing decks:</span>
+        <span class="tag">.raw</span><span class="tag">.con</span><span class="tag">.mon</span><span class="tag">.sub</span><span class="tag">.csv</span>
+      </div>
+    </div>
+    <div>
+      <div class="code-panel" role="img" aria-label="Python example: load a case, run parallel N-1 screening, export violations">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>&nbsp;screen_study.py</div>
+        <pre><span class="c-kw">import</span> psflow <span class="c-kw">as</span> ps
+
+case = ps.<span class="c-fn">load_case</span>(<span class="c-str">"planning_case.raw"</span>)
+mon  = ps.<span class="c-fn">monitored</span>(<span class="c-str">"hv_elements.mon"</span>)
+con  = ps.<span class="c-fn">contingencies</span>(<span class="c-str">"n1_all.con"</span>)
+
+<span class="c-cm"># full N-1 screen, parallel across cores</span>
+res = ps.<span class="c-fn">contingency_screen</span>(case, con, mon,
+                            workers=<span class="c-kw">64</span>)
+
+res.<span class="c-fn">violations</span>().<span class="c-fn">to_csv</span>(<span class="c-str">"results.csv"</span>)
+res.<span class="c-fn">report</span>(<span class="c-str">"constraint_summary.html"</span>)</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap band-grid">
+    <div class="band-item"><div class="k">Scriptable, end to end</div><div class="v">A Python API instead of a GUI queue. Every study is a script you can version, review, and rerun.</div></div>
+    <div class="band-item"><div class="k">Parallel by default</div><div class="v">Batch contingency sets and scenario sweeps across all available cores, on your workstation or your cloud.</div></div>
+    <div class="band-item"><div class="k">PSS/E-compatible I/O</div><div class="v">Ingests the RAW, CON, MON, and SUB decks your workflows already produce. No re-modeling.</div></div>
+    <div class="band-item"><div class="k">Your data stays yours</div><div class="v">Bring-your-own-data by design. Models run in your environment under your own data agreements.</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Built for the people who actually run the studies</h2>
+      <p class="muted">The interconnection queue has outgrown GUI-era tooling. PsFlow serves the teams doing the engineering — not another map portal.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="card"><div class="node"></div><h3>Transmission consultants</h3><p>Automate screening and restudy work across clients. Turn a week of manual case runs into an overnight batch with a reviewable script and an automated constraint report.</p></div>
+      <div class="card"><div class="node"></div><h3>Developer transmission teams</h3><p>Scope points of interconnection, screen deliverability, and stress-test queue positions in house — without renting another seat of legacy software for every engineer.</p></div>
+      <div class="card"><div class="node"></div><h3>Large-load &amp; data center siting</h3><p>Evaluate load interconnection feasibility under shifting ERCOT and RTO study rules, with contingency and transfer-limit analysis you control end to end.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What PsFlow computes</h2>
+      <p class="muted">Three core workflows, exposed as composable Python functions.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="card"><div class="node"></div><h3>Contingency screening</h3><p>Linearized N-1 analysis over full contingency sets: post-contingency flows, violation detection, and worst-offender ranking on interconnection-scale cases.</p><span class="fn">ps.contingency_screen(...)</span></div>
+      <div class="card"><div class="node"></div><h3>Transfer limits</h3><p>Source-to-sink transfer capability with binding-constraint identification, for deliverability screening and interface studies.</p><span class="fn">ps.transfer_limit(...)</span></div>
+      <div class="card"><div class="node"></div><h3>Worst-case transfer limits</h3><p>Transfer limits evaluated across contingency sets to find the credible worst case — the number a screening decision actually turns on.</p><span class="fn">ps.worst_case_limit(...)</span></div>
+    </div>
+    <p style="margin-top:28px" class="muted">Today PsFlow targets DC-linearized screening, scoping, and congestion workflows. AC analysis is on the roadmap — built on solver work we already maintain <a href="opensource.html">in the open</a>.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta-panel">
+      <div>
+        <h2>2026 design partner program</h2>
+        <p>We're taking on a limited number of design partners: pilot pricing, direct access to the engineer building the tool, and a roadmap shaped by your studies. If your team runs screening, deliverability, or congestion work, let's talk.</p>
+      </div>
+      <div><a class="btn btn-primary" href="contact.html">Get in touch</a></div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Powersense</h4>
+        <p>Independent power-systems software. Transmission study automation built for the engineers who run the studies.</p>
+        <p style="margin-top:10px">Member, EPRI Open Power AI Consortium.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="psflow.html">PsFlow</a></li>
+          <li><a href="validation.html">Validation</a></li>
+          <li><a href="services.html">Engineering services</a></li>
+          <li><a href="opensource.html">Open source</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>&copy; 2026 Powersense. All rights reserved.</span>
+      <span>Customer data stays in customer environments — Powersense never receives or redistributes CEII.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
