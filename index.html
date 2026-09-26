@@ -40,7 +40,7 @@
       "url": "https://www.powersense.io/psflow.html",
       "applicationCategory": "EngineeringApplication",
       "operatingSystem": "Linux, Windows, macOS",
-      "description": "Scriptable Python engine for N-1 contingency screening, transfer limits, and worst-case transfer limits with PSS/E-compatible inputs and parallel scenario batching.",
+      "description": "Scriptable Python engine for N-1 contingency screening, transfer limits, and injection-capability analysis with PSS/E-compatible inputs and parallel scenario batching.",
       "publisher": { "@id": "https://www.powersense.io/#org" },
       "offers": { "@type": "Offer", "availability": "https://schema.org/PreOrder", "description": "Annual per-seat license; 2026 design-partner pilot pricing." }
     }
@@ -140,7 +140,7 @@ res.<span class="c-fn">report</span>(<span class="c-str">"constraint_summary.htm
     <div class="feature-grid">
       <div class="card"><div class="node"></div><h3>Contingency screening</h3><p>Linearized N-1 analysis over full contingency sets: post-contingency flows, violation detection, and worst-offender ranking on interconnection-scale cases.</p><span class="fn">ps.contingency_screen(...)</span></div>
       <div class="card"><div class="node"></div><h3>Transfer limits</h3><p>Source-to-sink transfer capability with binding-constraint identification, for deliverability screening and interface studies.</p><span class="fn">ps.transfer_limit(...)</span></div>
-      <div class="card"><div class="node"></div><h3>Worst-case transfer limits</h3><p>Transfer limits evaluated across contingency sets to find the credible worst case — the number a screening decision actually turns on.</p><span class="fn">ps.worst_case_limit(...)</span></div>
+      <div class="card"><div class="node"></div><h3>Injection-capability analysis</h3><p>Maximum deliverable injection at a point of interconnection, evaluated across contingency sets — the number a screening decision actually turns on.</p><span class="fn">ps.injection_limit(...)</span></div>
     </div>
     <p style="margin-top:28px" class="muted">Today PsFlow targets DC-linearized screening, scoping, and congestion workflows. AC analysis is on the roadmap — built on solver work we already maintain <a href="opensource.html">in the open</a>.</p>
   </div>

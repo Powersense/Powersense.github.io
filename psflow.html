@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PsFlow — scriptable engine for contingency, transfer limit, and congestion studies | Powersense</title>
-<meta name="description" content="PsFlow product overview: DC contingency screening, transfer limits, worst-case transfer limits, PSS/E-compatible inputs, parallel batching, automated reporting, bring-your-own-data.">
+<meta name="description" content="PsFlow product overview: DC contingency screening, transfer limits, injection-capability analysis, PSS/E-compatible inputs, parallel batching, automated reporting, bring-your-own-data.">
 <link rel="canonical" href="https://www.powersense.io/psflow.html">
 <meta property="og:title" content="PsFlow — scriptable engine for contingency, transfer limit, and congestion studies | Powersense">
-<meta property="og:description" content="PsFlow product overview: DC contingency screening, transfer limits, worst-case transfer limits, PSS/E-compatible inputs, parallel batching, automated reporting, bring-your-own-data.">
+<meta property="og:description" content="PsFlow product overview: DC contingency screening, transfer limits, injection-capability analysis, PSS/E-compatible inputs, parallel batching, automated reporting, bring-your-own-data.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.powersense.io/psflow.html">
 <meta property="og:image" content="https://www.powersense.io/assets/powersense-logo.png">
@@ -52,7 +52,7 @@
 <section class="section"><div class="wrap split">
   <div class="prose">
     <h2 style="margin-top:0">What it is</h2>
-    <p>PsFlow implements the linearized study workflows at the heart of screening and scoping work: full N-1 contingency analysis, source-to-sink transfer limits, and worst-case transfer limits across contingency sets. It reads industry-standard case and study decks, runs scenario batches in parallel, and produces structured results — DataFrames, CSVs, and generated constraint reports — instead of screenshots.</p>
+    <p>PsFlow implements the linearized study workflows at the heart of screening and scoping work: full N-1 contingency analysis, source-to-sink transfer limits, and injection-capability analysis across contingency sets. It reads industry-standard case and study decks, runs scenario batches in parallel, and produces structured results — DataFrames, CSVs, and generated constraint reports — instead of screenshots.</p>
     <h3>What it is not (yet)</h3>
     <p>PsFlow is a DC-linearized engine. It is the right tool for screening, deliverability, congestion, and transfer-capability work, where linearized analysis is standard practice. It is not a substitute for full AC facility studies today; AC capability is on the roadmap, building on the ACOPF solver work we maintain <a href="opensource.html">in open source</a>. We'd rather be precise about scope than sell you a vague one.</p>
   </div>
@@ -62,7 +62,7 @@
       <tbody>
         <tr><td>N-1 contingency screening</td><td class="ok">Available</td></tr>
         <tr><td>Transfer limit analysis</td><td class="ok">Available</td></tr>
-        <tr><td>Worst-case transfer limits</td><td class="ok">Available</td></tr>
+        <tr><td>Injection-capability analysis</td><td class="ok">Available</td></tr>
         <tr><td>PSS/E RAW / CON / MON / SUB input</td><td class="ok">Available</td></tr>
         <tr><td>Parallel scenario batching</td><td class="ok">Available</td></tr>
         <tr><td>Automated constraint reports</td><td class="ok">Available</td></tr>
